@@ -1,0 +1,18 @@
+body {
+  width: 75%;
+  margin: auto;
+  text-align: center;
+}
+header nav a {
+  text-align: center;
+  margin: auto;
+}
+div {
+  display: inline-block;
+}
+.error {
+  font-size: 3em;
+}
+.hide {
+  display: none;
+}

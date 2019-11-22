@@ -1,0 +1,24 @@
+<form id="selectedBookForm" class="hide" action="saveBook" method="post">
+
+  <% if (override) { %>
+  <input type='hidden' name='_method' value='put'>
+  <input type='hidden' name='id' value='<%= book.id %>'>
+  <% } %>
+
+  <img src="" id="formImage">
+  <input type="text" id="formImageURL" name="image_url" required>
+  <input type="text" id="formTitle" name="title" required>
+  <input type="text" id="formAuthor" name="author" required>
+  <input type="text" id="formISBN" name="isbn" required>
+  <textarea type="text" cols="70" rows="15" id="formDescription" name="description" required></textarea>
+  
+  <input type="text" id="formBookShelf" name="newBookshelf" placeholder="Add new bookshelf">
+
+  <select name="oldBookshelf">
+    <% bookShelves.forEach(shelf => { %>
+    <option><%= shelf.bookshelf %></option>
+    <% }); %>
+  </select>
+
+  <button id="bookSubmitButton" type="submit">Add to My Library</button>
+</form>

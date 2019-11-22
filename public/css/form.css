@@ -1,0 +1,11 @@
+article, form, button {
+  width: 100%;
+}
+main {
+  margin-top: 50px;
+}
+
+#selectedBookForm {
+  position: fixed;
+  margin: auto;
+}

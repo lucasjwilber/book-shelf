@@ -1,0 +1,14 @@
+<%- include ../partials/bookForm.ejs %>
+
+<article>
+  <%- include ../partials/bookDetails.ejs %>
+  <p class="shelf"><%= book.bookshelf %></p>
+  <p class="isbn"><%= book.isbn %></p>
+</article>
+
+  <form action="/deleteBook" method="post" id="removeBook">
+    <input type='hidden' name='id' value='<%= book.id %>'>
+    <button type="submit" id="bookDeleteButton">Delete</button>
+  </form>
+
+  <button type="submit" id="editBookButton">Update Details</button>

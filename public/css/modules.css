@@ -1,0 +1,34 @@
+article {
+  width: 450px;
+  height: 550px;
+  display: grid;
+  grid-template-rows: 25px 200px 10px 40px 10px 30px 10px 150px 25px 50px;
+  justify-items: center;
+  overflow: hidden;
+  margin-top: 20px !important;
+}
+  article>img {
+    grid-row: 2/3;
+
+    height: 100%;
+  }
+  article>h3 {
+    grid-row: 4/5;
+  }
+  article>h4 {
+    grid-row: 6/7;
+  }
+  article>p {
+    height: 150px;
+    grid-row: 8/9;
+    overflow-y: scroll;
+  }
+  article>button {
+    grid-row: 10/11;
+  }
+button {
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 66%;
+  padding: 5px;
+}

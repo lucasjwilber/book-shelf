@@ -1,0 +1,28 @@
+{
+  "name": "book-shelf",
+  "version": "1.0.0",
+  "description": "This is a redesign/improvement on a previous project. It's an app you can use to search for books using the Google Books API and save your favorites to your own library.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasjwilber/book-shelf.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasjwilber/book-shelf/issues"
+  },
+  "homepage": "https://github.com/lucasjwilber/book-shelf#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "pg": "^7.14.0",
+    "superagent": "^5.1.1"
+  }
+}
