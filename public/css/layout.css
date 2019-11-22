@@ -1,0 +1,55 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+}
+nav {
+  margin-top: 20px;
+  height: 50px;
+}
+header>h2 {
+  text-align: center;
+}
+input {
+  margin-bottom: 20px;
+}
+section {
+  width: 75%;
+  margin: auto;
+}
+  div {
+    display: inline-block;
+  }
+    label {
+      width: 35%;
+    }
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+
+@media (min-width: 660px) and (max-width: 959px) {
+  body {
+    width: 660px;
+  }
+  h1, p {
+    padding: 10px;
+  }
+  article {
+    width: 48%;
+  }
+}
+
+@media (min-width: 960px) {
+  body {
+    width: 960px;
+  }
+  article {
+    width: 32%;
+  }
+  form {
+    padding: 50px;
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include ../partials/head.ejs %>
+  <title>Library</title>
+</head>
+
+<body>
+  <%- include ../partials/header.ejs %>
+
+  <h1>your library</h1>
+
+  <% library.forEach(shelf => { %>
+    <section class="shelf">
+      
+      <% shelf.books.forEach(book => { %>
+      <article class="book">
+        <%- include ../partials/bookDetails.ejs %>
+        <a href="/<%= book.id %>">Details</a>
+      </article>
+      <% }); %>
+
+      <h2><%= shelf.name %></h2>
+    </section>
+    
+  <% }); %>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
