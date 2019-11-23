@@ -1,53 +1,35 @@
 'use strict';
 
-$('.selectBookButton').on('click', bookSelected);
-
-
-function bookSelected() {
-
-  let $selectedBook = ($(this).parent()[0].children);
-  let $selectedImage = $selectedBook[0].src;
-  let $selectedTitle = $selectedBook[1].textContent;
-  let $selectedAuthor = $selectedBook[2].textContent;
-  let $selectedDescription = $selectedBook[3].textContent;
-  let $selectedISBN = $selectedBook[4].textContent;
-
-  $('#formImage').attr('src', $selectedImage);
-  $('#formImageURL').val($selectedImage);
-  $('#formTitle').val($selectedTitle);
-  $('#formAuthor').val($selectedAuthor);
-  $('#formDescription').val($selectedDescription);
-  $('#formISBN').val($selectedISBN);
-
-  $('#selectedBookForm').removeClass("hide");
-}
-
-
-
+$('.selectBookButton').on('click', fillBookDetailsForm);
+$('#editBookButton').on('click', fillBookDetailsForm);
 $('#bookSubmitButton').on('click', bookSubmit);
 $('#bookSubmitButton').on('submit', bookSubmit);
 
+
 function bookSubmit(event) {
   $('#selectedBookForm').addClass("hide");
 }
 
+function fillBookDetailsForm() {
 
+  let $selectedBook;
+  if ($(this)[0].id === 'editBookButton') {
+    $selectedBook = $(this).parent()[0].children[2].children;
+  } else {
+    $selectedBook = ($(this).parent()[0].children);
+  }
 
-$('#editBookButton').on('click', editBookDetails);
-
-function editBookDetails() {
-  console.log('update book details button clicked');
-  console.log($(this));
-
-  let $selectedBook = ($(this).parent()[0].children);
-  console.log($selectedBook);
   let $selectedImage = $selectedBook[0].src;
   let $selectedTitle = $selectedBook[1].textContent;
   let $selectedAuthor = $selectedBook[2].textContent;
   let $selectedDescription = $selectedBook[3].textContent;
   let $selectedISBN = $selectedBook[4].textContent;
-  let $selectedBookshelf = $selectedBook[5].textContent;
 
+  //if we're on the search page there won't be a bookshelf value defined yet. in that case index 5 would be the submit button.
+  if ($selectedBook[5].tagName !== 'BUTTON') {
+    let $selectedBookshelf = $selectedBook[5].textContent;
+    $('#formBookShelf').val($selectedBookshelf);
+  }
 
   $('#formImage').attr('src', $selectedImage);
   $('#formImageURL').val($selectedImage);
@@ -55,13 +37,6 @@ function editBookDetails() {
   $('#formAuthor').val($selectedAuthor);
   $('#formDescription').val($selectedDescription);
   $('#formISBN').val($selectedISBN);
-  $('#formBookShelf').val($selectedBookshelf);
 
   $('#selectedBookForm').removeClass("hide");
 }
-
-
-function bookSubmit(event) {
-  $('#selectedBookForm').addClass("hide");
-}
-
