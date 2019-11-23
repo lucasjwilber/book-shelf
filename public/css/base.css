@@ -1,18 +1,50 @@
 body {
-  width: 75%;
-  margin: auto;
-  text-align: center;
-}
-header nav a {
-  text-align: center;
+  background-color: rgba(172, 189, 187, 0.527);
+  font-family: 'Alata', sans-serif;
+  width: 67%;
   margin: auto;
 }
-div {
-  display: inline-block;
-}
-.error {
-  font-size: 3em;
+#selectedBookForm {
+  position: fixed;
+  margin: auto;
 }
 .hide {
   display: none;
 }
+/* some of the shelf styling was done in-line because it uses database information, see index.ejs */
+.shelf {
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  border: 3.5em solid brown;
+  border-top: none;
+}
+  /* shelf label: */
+  h2 {
+    margin: auto;
+    text-align: center;
+    position: relative;
+    bottom: 1.5em;
+    font-size: 2em;
+    background-color: gold;
+  }
+.book {
+  height: 40vh;
+  min-width: 20%;
+  margin-left: 1em;
+  background-size: cover;
+}
+  .description {
+    max-height: 25%;
+    overflow: auto;
+  }
+  /* 'details' button */
+  .book a {
+    position: relative;
+    left: 40%;
+    top: 92%;
+    padding: .3em .5em;
+    background-color: gold;
+    border: 2px solid black;
+    border-radius: 10px;
+  }

@@ -15,14 +15,14 @@
     <section class="shelf">
       
       <% shelf.books.forEach(book => { %>
-      <article class="book">
-        <%- include ../partials/bookDetails.ejs %>
+      <article class="book" style="background-image: url('<%=book.image_url%>')">
+        <!-- <%- include ../partials/bookDetails.ejs %> -->
         <a href="/<%= book.id %>">Details</a>
       </article>
       <% }); %>
 
-      <h2><%= shelf.name %></h2>
     </section>
+    <h2 style="width: <%= shelf.name.length * .8 %>em"><%= shelf.name %></h2>
     
   <% }); %>
 
