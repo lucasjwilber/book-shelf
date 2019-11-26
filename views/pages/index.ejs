@@ -9,7 +9,7 @@
 <body>
   <%- include ../partials/header.ejs %>
 
-  <h1>your library</h1>
+  <h1>Your Library</h1>
 
   <% library.forEach(shelf => { %>
     <section class="shelf">
@@ -17,12 +17,12 @@
       <% shelf.books.forEach(book => { %>
       <article class="book" style="background-image: url('<%=book.image_url%>')">
         <!-- <%- include ../partials/bookDetails.ejs %> -->
-        <a href="/<%= book.id %>">Details</a>
+        <a class="detailsButton" href="/<%= book.id %>">Details</a>
       </article>
       <% }); %>
 
     </section>
-    <h2 style="width: <%= shelf.name.length * .8 %>em"><%= shelf.name %></h2>
+    <h2 class="shelfLabel" style="width: <%= shelf.name.length * .8 %>em"><%= shelf.name %></h2>
     
   <% }); %>
 
