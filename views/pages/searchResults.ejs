@@ -8,14 +8,13 @@
 
 <body>
   <%- include ../partials/header.ejs %>
-  search results page
 
   <h1>Search Results</h1>
   <main>
     <%- include ../partials/bookForm.ejs %>
 
     <% bookList.forEach(book => { %>
-    <article>
+    <article class="searchResultsBook">
       <%- include ../partials/bookDetails.ejs %>
 
       <!-- class is used to un-hide the selected book form -->

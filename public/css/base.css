@@ -4,6 +4,14 @@ body {
   width: 67%;
   margin: auto;
 }
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+h1 {
+  text-align: center;
+  font-size: 2em;
+}
 #selectedBookForm {
   position: fixed;
   margin: auto;
@@ -18,13 +26,13 @@ body {
   overflow-y: auto;
   border: 3.5em solid brown;
   border-top: none;
+  background-color: rgba(165, 42, 42, 0.493);
 }
-  /* shelf label: */
-  h2 {
+  .shelfLabel {
     margin: auto;
     text-align: center;
     position: relative;
-    bottom: 1.5em;
+    top: -1.5em;
     font-size: 2em;
     background-color: gold;
   }
@@ -39,7 +47,7 @@ body {
     overflow: auto;
   }
   /* 'details' button */
-  .book a {
+  .detailsButton {
     position: relative;
     left: 40%;
     top: 92%;
@@ -47,4 +55,30 @@ body {
     background-color: gold;
     border: 2px solid black;
     border-radius: 10px;
+  }
+
+
+/* search page */
+#searchPageForm {
+  width: 50%;
+  margin: 20% auto;
+  display: grid;
+}
+  #searchPageForm * {
+    margin: 1%;
+  }
+  #searchPageForm section {
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+
+/* search results page */
+.searchResultsBook {
+  background-color: rgba(165, 42, 42, 0.548);
+  margin-top: 2em;
+}
+  .searchResultsBook * {
+    text-align: center;
   }
