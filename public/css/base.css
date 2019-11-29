@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(172, 189, 187, 0.527);
+  background-color: rgba(188, 202, 201, 0.527);
   font-family: 'Alata', sans-serif;
   width: 67%;
   margin: auto;
@@ -12,9 +12,10 @@ h1 {
   text-align: center;
   font-size: 2em;
 }
-#selectedBookForm {
-  position: fixed;
-  margin: auto;
+button {
+  padding: .5em 1em;
+  border-radius: 1em;
+  cursor: pointer;
 }
 .hide {
   display: none;
@@ -23,10 +24,12 @@ h1 {
 .shelf {
   display: flex;
   flex-direction: row;
+  height: 50vh;
   overflow-y: auto;
-  border: 3.5em solid brown;
+  border: 3.5em solid;
+  border-image: url(../img/woodTexture.jpg) 30 stretch;
   border-top: none;
-  background-color: rgba(165, 42, 42, 0.493);
+  background-color: rgba(105, 35, 35, 0.685);
 }
   .shelfLabel {
     margin: auto;
@@ -34,11 +37,13 @@ h1 {
     position: relative;
     top: -1.5em;
     font-size: 2em;
-    background-color: gold;
+    /* the margin-bottom should be half the font size to prevent the gap between shelves */
+    margin-bottom: -1em;
+    color: gold;
   }
 .book {
-  height: 40vh;
-  min-width: 20%;
+  margin-top: 5%;
+  min-width: 35%;
   margin-left: 1em;
   background-size: cover;
 }
@@ -46,19 +51,19 @@ h1 {
     max-height: 25%;
     overflow: auto;
   }
-  /* 'details' button */
   .detailsButton {
     position: relative;
-    left: 40%;
-    top: 92%;
+    top: 90%;
+    left: 33%;
     padding: .3em .5em;
     background-color: gold;
     border: 2px solid black;
     border-radius: 10px;
+    text-decoration: none;
   }
 
 
-/* search page */
+/* search form page */
 #searchPageForm {
   width: 50%;
   margin: 20% auto;
@@ -78,7 +83,57 @@ h1 {
 .searchResultsBook {
   background-color: rgba(165, 42, 42, 0.548);
   margin-top: 2em;
+  display: flex;
+  flex-direction: column;
 }
-  .searchResultsBook * {
+  .bookImage {
+    margin: auto;
+  }
+  .bookTitle, .bookAuthor {
     text-align: center;
+  }
+  .bookDescription {
+    width: 75%;
+    margin: auto;
+    max-height: 10em;
+    overflow: auto;
+  }
+  .searchResultsBook *{
+    margin-top: 1em;
+  }
+  .selectBookButton {
+    color: red;
+    margin: 1em auto;
+  }
+
+/* pop-up when you select a book */
+#selectedBookForm {
+  position: fixed;
+  margin: auto;
+  background-color: red;
+}
+  #selectedBookForm img {
+    width: 33%;
+    float: left;
+  }
+  #closeFormButton {
+    padding: 3px;
+    float: right;
+    font-weight: bold;
+  }
+    #closeFormButton:hover {
+      cursor: pointer;
+    }
+
+
+#bookDetailsPageContent {
+  display: flex;
+  flex-direction: column;
+}
+  #bookDeleteButton, #editBookButton {
+    width: 25%;
+    margin: auto;
+  }
+  #bookDetailsPageContent .bookDescription {
+    height: unset;
   }
