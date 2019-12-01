@@ -15,7 +15,7 @@ function fillBookDetailsForm() {
 
   let $selectedBook;
   if ($(this)[0].id === 'editBookButton') {
-    $selectedBook = $(this).parent()[0].children[2].children;
+    $selectedBook = $(this).parent().parent()[0].children[2].children;
   } else {
     $selectedBook = ($(this).parent()[0].children);
   }

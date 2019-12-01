@@ -2,13 +2,17 @@
 
 <article>
   <%- include ../partials/bookDetails.ejs %>
-  <p class="bookShelf"><i>This book is on your <%= book.bookshelf %> shelf</i></p>
+  <p class="bookShelf"><i><%= book.bookshelf %></i></p>
   <p class="isbn"><%= book.isbn %></p>
 </article>
 
+<section class="buttonsBox">
+
   <form action="/deleteBook" method="post" id="removeBook">
-    <input type='hidden' name='id' value='<%= book.id %>'>
+    <input type="hidden" name="id" value="<%= book.id %>">
     <button type="submit" id="bookDeleteButton">Delete</button>
   </form>
 
   <button type="submit" id="editBookButton">Update Details</button>
+
+</section>

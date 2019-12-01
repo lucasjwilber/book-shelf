@@ -5,12 +5,14 @@ body {
   margin: auto;
 }
 nav {
+  margin-top: 1em;
   display: flex;
   justify-content: space-around;
 }
 h1 {
   text-align: center;
   font-size: 2em;
+  margin: .4em auto;
 }
 button {
   padding: .5em 1em;
@@ -27,7 +29,7 @@ button {
   height: 50vh;
   overflow-y: auto;
   border: 3.5em solid;
-  border-image: url(../img/woodTexture.jpg) 30 stretch;
+  border-image: url(../img/woodTexture.jpg) 50 round;
   border-top: none;
   background-color: rgba(105, 35, 35, 0.685);
 }
@@ -42,8 +44,9 @@ button {
     color: gold;
   }
 .book {
-  margin-top: 5%;
-  min-width: 35%;
+  margin-top: 1.5%;
+  height: 95%;
+  min-width: 25%;
   margin-left: 1em;
   background-size: cover;
 }
@@ -81,8 +84,8 @@ button {
 
 /* search results page */
 .searchResultsBook {
-  background-color: rgba(165, 42, 42, 0.548);
   margin-top: 2em;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
 }
@@ -109,31 +112,85 @@ button {
 /* pop-up when you select a book */
 #selectedBookForm {
   position: fixed;
+  width: 67%;
   margin: auto;
-  background-color: red;
+  background-color: brown;
 }
   #selectedBookForm img {
     width: 33%;
     float: left;
   }
-  #closeFormButton {
-    padding: 3px;
-    float: right;
-    font-weight: bold;
+  #formRows {
+    width: 67%;
+    display: flex;
+    flex-direction: column;
   }
-    #closeFormButton:hover {
-      cursor: pointer;
+    #formRows div {
+      display: flex;
+      justify-content: space-between;
+      margin: 3px 3px 0px 0px;
     }
+      #formRows input, #formRows textarea {
+        width: 67%;
+      }
+      #formDescription {
+        width: 33%;
+        height: 11em;
+      }
+      #selectBookshelfDiv {
+        display: inline !important;
+      }
+        #selectBookshelfDiv label {
+          float: left;
+        }
+        #formBookShelf {
+          width: 33% !important;
+          float: right;
+        }
+        #selectedBookForm select {
+          width: 34.5%;
+          padding-bottom: 3px;
+          float: right;
+        }
+  #selectedBookForm .buttonsBox {
+    width: 67%;
+    float: right;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-around;
+  }
 
-
+/* book details page */
 #bookDetailsPageContent {
+  text-align: center;
   display: flex;
   flex-direction: column;
 }
-  #bookDeleteButton, #editBookButton {
-    width: 25%;
-    margin: auto;
+  #bookDetailsPageContent * {
+    margin-top: 1em;
   }
-  #bookDetailsPageContent .bookDescription {
-    height: unset;
+  .bookDescription {
+    text-align: left;
+  }
+  .buttonsBox {
+    width: 40%;
+    margin: 1em auto;
+    /* display: flex;
+    justify-content: space-around; */
+  }
+    #bookDeleteButton {
+      float: left;
+    }
+    #editBookButton {
+      float: right;
+    }
+
+
+footer {
+  margin-bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+  footer p {
+    margin-top: 2em;
   }
