@@ -6,19 +6,48 @@
   <% } %>
 
   <img src="" id="formImage">
-  <input type="text" id="formImageURL" name="image_url" required>
-  <input type="text" id="formTitle" name="title" required>
-  <input type="text" id="formAuthor" name="author" required>
-  <input type="text" id="formISBN" name="isbn" required>
-  <textarea type="text" cols="70" rows="15" id="formDescription" name="description" required></textarea>
-  
-  <input type="text" id="formBookShelf" name="newBookshelf" placeholder="Add new bookshelf">
 
-  <select name="oldBookshelf">
-    <% bookShelves.forEach(shelf => { %>
-    <option><%= shelf.bookshelf %></option>
-    <% }); %>
-  </select>
+  <section id="formRows">
+    <div>
+      <label>Image URL</label>
+      <input type="text" id="formImageURL" name="image_url" placeholder="image url" required>
+    </div>
 
-  <button id="bookSubmitButton" type="submit">Add to My Library</button>
+    <div>
+      <label>Title</label>
+      <input type="text" id="formTitle" name="title" required>
+    </div>
+
+    <div>
+      <label>Author</label>
+      <input type="text" id="formAuthor" name="author" required>
+    </div>
+
+    <div>
+      <label>ISBN</label>
+      <input type="text" id="formISBN" name="isbn" required>
+    </div>
+
+    <div>
+      <label>Description</label>
+      <textarea type="text" rows="10" id="formDescription" name="description" required></textarea>
+    </div>
+
+    <div id="selectBookshelfDiv">
+      <label>Bookshelf</label>
+      <input type="text" id="formBookShelf" name="newBookshelf" placeholder="Add new">
+
+      <select name="oldBookshelf">
+        <% bookShelves.forEach(shelf => { %>
+        <option><%= shelf.bookshelf %></option>
+        <% }); %>
+      </select>
+    </div>
+  </section>
+
+  <div class="buttonsBox">
+    <button id="bookSubmitButton" type="submit">Add to My Library</button>
+    <button id="closeFormButton">Close</button>
+  </div>
+
 </form>

@@ -4,6 +4,7 @@ $('.selectBookButton').on('click', fillBookDetailsForm);
 $('#editBookButton').on('click', fillBookDetailsForm);
 $('#bookSubmitButton').on('click', bookSubmit);
 $('#bookSubmitButton').on('submit', bookSubmit);
+$('#closeFormButton').on('click', bookSubmit);
 
 
 function bookSubmit(event) {
@@ -14,7 +15,7 @@ function fillBookDetailsForm() {
 
   let $selectedBook;
   if ($(this)[0].id === 'editBookButton') {
-    $selectedBook = $(this).parent()[0].children[2].children;
+    $selectedBook = $(this).parent().parent()[0].children[2].children;
   } else {
     $selectedBook = ($(this).parent()[0].children);
   }
@@ -33,6 +34,7 @@ function fillBookDetailsForm() {
 
   $('#formImage').attr('src', $selectedImage);
   $('#formImageURL').val($selectedImage);
+  $('#formTitle').val($selectedTitle);
   $('#formTitle').val($selectedTitle);
   $('#formAuthor').val($selectedAuthor);
   $('#formDescription').val($selectedDescription);

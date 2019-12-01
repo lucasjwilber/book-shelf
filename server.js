@@ -113,7 +113,7 @@ function saveBook(request, response) {
   //use the default bookshelf option unless one was specified in the form
   let bookshelf = obj.newBookshelf ? obj.newBookshelf : obj.oldBookshelf;
 
-  let sql = `INSERT INTO books (author, title, isbn, image_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;`;
+  let sql = 'INSERT INTO books (author, title, isbn, image_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;';
   let safeValues = [obj.author, obj.title, obj.isbn, obj.image_url, obj.description, bookshelf];
 
   client.query(sql, safeValues)
@@ -125,14 +125,13 @@ function saveBook(request, response) {
     });
 }
 
-//TODO: DRY up these v ^
 
 function updateBook(request, response) {
   let obj = request.body;
   //use the default bookshelf option unless one was specified in the form
   let bookshelf = obj.newBookshelf ? obj.newBookshelf : obj.oldBookshelf;
 
-  let sql = `UPDATE books SET author=$1, title=$2, isbn=$3, image_url=$4, description=$5, bookshelf=$6 WHERE id=$7 RETURNING id;`;
+  let sql = 'UPDATE books SET author=$1, title=$2, isbn=$3, image_url=$4, description=$5, bookshelf=$6 WHERE id=$7 RETURNING id;';
   let safeValues = [obj.author, obj.title, obj.isbn, obj.image_url, obj.description, bookshelf, obj.id];
 
   client.query(sql, safeValues)

@@ -1,20 +1,23 @@
 body {
-  background-color: rgba(172, 189, 187, 0.527);
+  background-color: rgba(188, 202, 201, 0.527);
   font-family: 'Alata', sans-serif;
   width: 67%;
   margin: auto;
 }
 nav {
+  margin-top: 1em;
   display: flex;
   justify-content: space-around;
 }
 h1 {
   text-align: center;
   font-size: 2em;
+  margin: .4em auto;
 }
-#selectedBookForm {
-  position: fixed;
-  margin: auto;
+button {
+  padding: .5em 1em;
+  border-radius: 1em;
+  cursor: pointer;
 }
 .hide {
   display: none;
@@ -23,10 +26,12 @@ h1 {
 .shelf {
   display: flex;
   flex-direction: row;
+  height: 50vh;
   overflow-y: auto;
-  border: 3.5em solid brown;
+  border: 3.5em solid;
+  border-image: url(../img/woodTexture.jpg) 50 round;
   border-top: none;
-  background-color: rgba(165, 42, 42, 0.493);
+  background-color: rgba(105, 35, 35, 0.685);
 }
   .shelfLabel {
     margin: auto;
@@ -34,11 +39,14 @@ h1 {
     position: relative;
     top: -1.5em;
     font-size: 2em;
-    background-color: gold;
+    /* the margin-bottom should be half the font size to prevent the gap between shelves */
+    margin-bottom: -1em;
+    color: gold;
   }
 .book {
-  height: 40vh;
-  min-width: 20%;
+  margin-top: 1.5%;
+  height: 95%;
+  min-width: 25%;
   margin-left: 1em;
   background-size: cover;
 }
@@ -46,19 +54,19 @@ h1 {
     max-height: 25%;
     overflow: auto;
   }
-  /* 'details' button */
   .detailsButton {
     position: relative;
-    left: 40%;
-    top: 92%;
+    top: 90%;
+    left: 33%;
     padding: .3em .5em;
     background-color: gold;
     border: 2px solid black;
     border-radius: 10px;
+    text-decoration: none;
   }
 
 
-/* search page */
+/* search form page */
 #searchPageForm {
   width: 50%;
   margin: 20% auto;
@@ -76,9 +84,113 @@ h1 {
 
 /* search results page */
 .searchResultsBook {
-  background-color: rgba(165, 42, 42, 0.548);
   margin-top: 2em;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
 }
-  .searchResultsBook * {
+  .bookImage {
+    margin: auto;
+  }
+  .bookTitle, .bookAuthor {
     text-align: center;
+  }
+  .bookDescription {
+    width: 75%;
+    margin: auto;
+    max-height: 10em;
+    overflow: auto;
+  }
+  .searchResultsBook *{
+    margin-top: 1em;
+  }
+  .selectBookButton {
+    color: red;
+    margin: 1em auto;
+  }
+
+/* pop-up when you select a book */
+#selectedBookForm {
+  position: fixed;
+  width: 67%;
+  margin: auto;
+  background-color: brown;
+}
+  #selectedBookForm img {
+    width: 33%;
+    float: left;
+  }
+  #formRows {
+    width: 67%;
+    display: flex;
+    flex-direction: column;
+  }
+    #formRows div {
+      display: flex;
+      justify-content: space-between;
+      margin: 3px 3px 0px 0px;
+    }
+      #formRows input, #formRows textarea {
+        width: 67%;
+      }
+      #formDescription {
+        width: 33%;
+        height: 11em;
+      }
+      #selectBookshelfDiv {
+        display: inline !important;
+      }
+        #selectBookshelfDiv label {
+          float: left;
+        }
+        #formBookShelf {
+          width: 33% !important;
+          float: right;
+        }
+        #selectedBookForm select {
+          width: 34.5%;
+          padding-bottom: 3px;
+          float: right;
+        }
+  #selectedBookForm .buttonsBox {
+    width: 67%;
+    float: right;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+/* book details page */
+#bookDetailsPageContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+  #bookDetailsPageContent * {
+    margin-top: 1em;
+  }
+  .bookDescription {
+    text-align: left;
+  }
+  .buttonsBox {
+    width: 40%;
+    margin: 1em auto;
+    /* display: flex;
+    justify-content: space-around; */
+  }
+    #bookDeleteButton {
+      float: left;
+    }
+    #editBookButton {
+      float: right;
+    }
+
+
+footer {
+  margin-bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+  footer p {
+    margin-top: 2em;
   }
