@@ -43,3 +43,9 @@ footer {
   footer p {
     margin-top: 2em;
   }
+
+.error {
+  text-align: center;
+  color: red;
+  font-size: 2.5em;
+}
