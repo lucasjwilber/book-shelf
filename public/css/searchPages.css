@@ -1,0 +1,58 @@
+/* search form page */
+#searchPageForm {
+  width: 35%;
+  padding: 2em;
+  margin: 20% auto;
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+  #searchPageForm * {
+    margin: 1%;
+  }
+  #searchPageForm section {
+    display: flex;
+    justify-content: space-around;
+  }
+    #searchPageForm span {
+      width: 6em;
+      color: white;
+    }
+  #searchPageForm button {
+    width: 33%;
+    margin: auto;
+    background-color: white;
+    font-size: 1em;
+    font-family: 'Alata', sans-serif;
+  }
+
+/* search results page */
+.searchResultsBook {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+  .bookImage {
+    margin: auto;
+  }
+  .bookTitle, .bookAuthor {
+    text-align: center;
+  }
+  .bookDescription {
+    width: 75%;
+    margin: auto;
+    max-height: 10em;
+    overflow: auto;
+    background-color: white
+  }
+  .searchResultsBook *{
+    margin-top: 1em;
+  }
+  .selectBookButton {
+    font-family: 'Alata', sans-serif;
+    font-size: 1em;
+    margin: 1em auto;
+  }
+main {
+  margin-bottom: 2em;
+}

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include ../partials/head.ejs %>
-  <title>Search</title>
+  <link rel="stylesheet" href="css/searchPages.css">
 </head>
 
 <body>
@@ -11,15 +12,18 @@
   <form id="searchPageForm" action="/search" method="post">
     <input type="text" name="searchText" placeholder="Enter a title or author" required>
     <section>
-      <label><span>Title</span>
+      <span>
         <input type="radio" name="searchType" value="title" required>
-      </label>
-      <label><span>Author</span>
+        <label>Title</label>
+      </span>
+      <span>
         <input type="radio" name="searchType" value="author" required>
-      </label>
+        <label>Author</label>
+      </span>
     </section>
-    <button type="submit">Search</button>
+    <button type="submit">Search!</button>
   </form>
 
 </body>
+
 </html>

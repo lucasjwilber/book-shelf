@@ -1,0 +1,36 @@
+#bookDetailsPageContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin-top: 10%;
+}
+  #bookDetailsPageContent * {
+    margin-top: 1em;
+  }
+  #bookDetailsPageContent article {
+    width: 90%;
+    margin: auto;
+  }
+    .bookShelf {
+      display: none;
+    }
+    .bookImage {
+      border: 1px solid gray;
+    }
+    .bookDescription {
+      text-align: left;
+    }
+  .buttonsBox {
+    width: 40%;
+    margin: 1em auto;
+  }
+    .buttonsBox button {
+      font-size: 1em;
+    }
+    #bookDeleteButton {
+      float: left;
+    }
+    #editBookButton {
+      float: right;
+    }

@@ -1,0 +1,49 @@
+/* some of the shelf styling was done in-line because it uses database information, see index.ejs */
+.shelf {
+  display: flex;
+  flex-direction: row;
+  height: 40vh;
+  overflow-y: auto;
+  border: 3.5em solid;
+  border-image: url(../img/woodTexture.jpg) 50 round;
+  border-top: none;
+}
+  .book {
+    margin-top: 10%;
+    height: 77%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    min-width: 25%;
+    margin-left: 1em;
+  }
+    .detailsButton {
+      position: relative;
+      top: 90%;
+      /* left: 29%; */
+      padding: .3em .5em;
+      background-color: gold;
+      border: 2px solid black;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+  .shelfLabel {
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: -1.5em;
+    font-size: 2em;
+    /* the margin-bottom should be half the font size to prevent a gap between shelves */
+    margin-bottom: -1em;
+    color: gold;
+  }
+#shelfLegs {
+  width: 100%;
+  z-index: -898;
+  display: grid;
+  grid-template-columns: 3.5em 1fr 3.5em;
+}
+  .shelfLeg {
+    width: 3.5em;
+    height: 3.5em;
+    background-image: url(../img/woodTexture.jpg);
+  }

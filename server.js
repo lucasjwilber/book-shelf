@@ -4,11 +4,18 @@
 const express = require('express');
 const app = express();
 const superagent = require('superagent');
+const methodOverride = require('method-override');
 require('dotenv').config();
 const PORT = process.env.PORT || 3001;
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true, }));
-app.use(express.static('public'));
+app.use(express.static('public'));app.use(methodOverride((request, response) => {
+  if (request.body && typeof request.body === 'object' && '_method' in request.body) {
+    let method = request.body._method;
+    delete request.body._method;
+    return method;
+  }
+}));
 
 //database setup
 const pg = require('pg');
@@ -89,6 +96,8 @@ function handleSearch(request, response) {
 function displayDetailView(request, response) {
   let bookID = request.params.id;
 
+  console.log('on details page');
+
   client.query(`SELECT * FROM books WHERE id=${bookID};`)
     .then(result => {
       let bookInfo = result.rows[0];
@@ -164,7 +173,6 @@ function Book(obj) {
   if (obj.industryIdentifiers) isbn = obj.industryIdentifiers[0];
   this.isbn = isbn ? `${isbn.type} ${isbn.identifier}` : 'ISBN not found';
 
-  if (!obj.imageLinks) { console.log(obj); }
   this.image_url = obj.imageLinks ? secureUrl(obj.imageLinks.thumbnail) : 'Image not found.';
 
   this.description = obj.description || 'Description not found.';

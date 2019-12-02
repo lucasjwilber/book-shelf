@@ -3,29 +3,34 @@
 
 <head>
   <%- include ../partials/head.ejs %>
-  <title>Library</title>
+  <link rel="stylesheet" href="css/homePage.css">
 </head>
 
 <body>
   <%- include ../partials/header.ejs %>
 
-  <h1>Your Library</h1>
+  <h1>Your Books</h1>
 
 
   <% library.forEach(shelf => { %>
 
-    <section class="shelf">
-      <% shelf.books.forEach(book => { %>
-      <article class="book" style="background-image: url('<%=book.image_url%>')">
-        <a class="detailsButton" href="/<%= book.id %>">Details</a>
-      </article>
-      <% }); %>
-    </section>
+  <section class="shelf">
+    <% shelf.books.forEach(book => { %>
+    <article class="book" style="background-image: url('<%=book.image_url%>')">
+      <a class="detailsButton" href="/<%= book.id %>"><i class="fas fa-book-open"></i> &nbsp; Details</a>
+    </article>
+    <% }); %>
+  </section>
 
-    <h2 class="shelfLabel" style="width: <%= shelf.name.length * .8 %>em"><%= shelf.name %></h2>
-    
+  <h2 class="shelfLabel" style="width: <%= shelf.name.length * .8 %>em"><%= shelf.name %></h2>
+
   <% }); %>
 
+  <div id="shelfLegs">
+    <div class="shelfLeg"></div>
+    <div id="shelfLegsSpacer"></div>
+    <div class="shelfLeg"></div>
+  </div>
 
   <%- include ../partials/footer.ejs %>
 

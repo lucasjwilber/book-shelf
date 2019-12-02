@@ -1,0 +1,68 @@
+/* pop-up when you select a book */
+.hide {
+  display: none;
+}
+#selectedBookForm {
+  padding: 2em 0;
+  position: fixed;
+  width: 100%;
+  max-width: 960px;
+  left: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+  #selectedBookForm img {
+    width: 33%;
+    margin-top: auto;
+    float: left;
+    margin-left: 5%;
+  }
+  #closeFormButton {
+    width: 1em;
+    margin: -1em 0 .5em .5em;
+    float: right;
+    cursor: pointer;
+    font-size: 1.75em;
+    margin-top: -1em;
+    color: white;
+  }
+  #formRows {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+    #formRows label{
+      color: white;
+    }
+    #formRows div {
+      display: flex;
+      justify-content: space-between;
+      margin: 3px 3px 0px 0px;
+    }
+      #formRows input, #formRows textarea {
+        width: 67%;
+      }
+      #formDescription {
+        width: 33%;
+        height: 11em;
+      }
+      #selectBookshelfDiv {
+        display: inline !important;
+      }
+        #selectBookshelfDiv label {
+          float: left;
+        }
+        #formBookShelf {
+          width: 33% !important;
+          float: right;
+        }
+        #selectedBookForm select {
+          width: 34.5%;
+          padding-bottom: 3px;
+          float: right;
+        }
+  #bookSubmitButton {
+    width: 11em;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-around;
+  }
