@@ -92,11 +92,21 @@ function handleSearch(request, response) {
     });
 }
 
+function Book(obj) {
+  this.author = obj.authors ? obj.authors.join(', ') : 'Author not found';
+  this.title = obj.title || 'Title not found.';
+
+  let isbn;
+  if (obj.industryIdentifiers) isbn = obj.industryIdentifiers[0];
+  this.isbn = isbn ? `${isbn.type} ${isbn.identifier}` : 'ISBN not found';
+
+  this.image_url = obj.imageLinks ? secureUrl(obj.imageLinks.thumbnail) : 'Image not found.';
+  this.description = obj.description || 'Description not found.';
+}
+
 
 function displayDetailView(request, response) {
   let bookID = request.params.id;
-
-  console.log('on details page');
 
   client.query(`SELECT * FROM books WHERE id=${bookID};`)
     .then(result => {
@@ -164,19 +174,6 @@ function deleteBook(request, response) {
     });
 }
 
-
-function Book(obj) {
-  this.author = obj.authors || obj.author || ['Author not found.'];
-  this.title = obj.title || 'Title not found.';
-
-  let isbn;
-  if (obj.industryIdentifiers) isbn = obj.industryIdentifiers[0];
-  this.isbn = isbn ? `${isbn.type} ${isbn.identifier}` : 'ISBN not found';
-
-  this.image_url = obj.imageLinks ? secureUrl(obj.imageLinks.thumbnail) : 'Image not found.';
-
-  this.description = obj.description || 'Description not found.';
-}
 
 //Replace http with https for the image links
 function secureUrl(url) {
